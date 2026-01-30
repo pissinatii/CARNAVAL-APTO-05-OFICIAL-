@@ -111,16 +111,37 @@
     }
 
     /* ÍCONE */
-    .icone {
-      width: 150px;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.45));
-    }
+   .icone {
+  width: 150px;
+  margin-bottom: 28px;
+  opacity: 0;
+  filter: blur(6px) drop-shadow(0 16px 32px rgba(0,0,0,0.45));
+  animation: iconCinematic 2.8s cubic-bezier(.16,1,.3,1) forwards;
+}
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+   @keyframes iconCinematic {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(20px);
+    filter: blur(10px) drop-shadow(0 0 0 rgba(0,0,0,0));
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+    filter: blur(2px) drop-shadow(0 18px 36px rgba(0,0,0,0.45));
+  }
+
+  70% {
+    transform: scale(1) translateY(-6px);
+    filter: blur(0) drop-shadow(0 20px 40px rgba(0,0,0,0.45));
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    filter: blur(0) drop-shadow(0 16px 32px rgba(0,0,0,0.45));
+  }
+}
     }
 
     /* TEXTOS */
