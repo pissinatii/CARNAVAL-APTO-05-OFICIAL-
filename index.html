@@ -145,7 +145,59 @@
         height: 30px;
       }
     }
+
+    /* ================= INTRO ABAIXO DO HEADER ================= */
+.intro {
+  margin-top: 64px; /* altura do header */
+  padding: 32px 20px 24px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.icone-intro {
+  width: 64px;
+  margin-bottom: 16px;
+}
+
+.titulo-carnaval {
+  font-size: 48px;
+  font-weight: 900; /* bold */
+  color: #4b1b6a;
+  line-height: 1.05;
+}
+
+.titulo-apto {
+  font-size: 48px;
+  font-weight: 600; /* semibold */
+  color: #ff2f92;
+  line-height: 1.05;
+}
+
+.cidade {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00d084;
+  letter-spacing: 1px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .icone-intro {
+    width: 52px;
+  }
+
+  .titulo-carnaval,
+  .titulo-apto {
+    font-size: 36px;
+  }
+
+  .cidade {
+    font-size: 14px;
+  }
+}
   </style>
+  
 </head>
 
 <body>
@@ -155,8 +207,23 @@
     <h3>APTO 05</h3>
     <img src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png" alt="Carnaval">
   </header>
-
+  
   <!-- CONTEÚDO -->
+
+  <section class="intro">
+  <img
+    class="icone-intro"
+    src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png"
+    alt="Carnaval"
+  >
+
+  <div class="intro-textos">
+    <h1 class="titulo-carnaval">CARNAVAL</h1>
+    <h1 class="titulo-apto">APTO 06</h1>
+    <p class="cidade">BELO HORIZONTE - MG</p>
+  </div>
+</section>
+  
   <section class="hero">
     <div class="overlay">
       <h1>2026</h1>
