@@ -247,26 +247,24 @@
   </footer>
 
   <script>
-    const splash = document.getElementById("splash");
-    const sound = document.getElementById("introSound");
+  const splash = document.getElementById("splash");
+  const sound = document.getElementById("introSound");
 
-    if (!localStorage.getItem("splashShown")) {
-      sound.volume = 0.3;
-      sound.play().then(() => {
-        setTimeout(() => {
-          sound.pause();
-          sound.currentTime = 0;
-        }, 1300);
-      }).catch(() => {});
+  window.addEventListener("load", () => {
+    sound.volume = 0.3;
 
+    sound.play().then(() => {
       setTimeout(() => {
-        splash.classList.add("hide");
-        localStorage.setItem("splashShown", "true");
-      }, 3400);
-    } else {
-      splash.style.display = "none";
-    }
-  </script>
+        sound.pause();
+        sound.currentTime = 0;
+      }, 1300);
+    }).catch(() => {});
+
+    setTimeout(() => {
+      splash.classList.add("hide");
+    }, 3400);
+  });
+</script>
 
 </body>
 </html>
