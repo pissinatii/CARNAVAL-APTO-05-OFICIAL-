@@ -5,137 +5,170 @@
   <title>Carnaval Apto 05</title>
 
   <!-- App style -->
-<meta name="theme-color" content="#ff0080">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Carnaval Apto 05">
+  <meta name="theme-color" content="#FFD400">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Carnaval Apto 05">
 
-<link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 
-  <!-- Mobile first -->
+  <!-- Mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Ícone do site (imagem sua) -->
+  <!-- Ícones -->
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
 
- <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-  body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ff0080, #ffb000);
-    color: #fff;
-  }
+    body {
+      min-height: 100vh;
+      background: #000;
+      color: #fff;
+    }
 
-.hero {
-  min-height: 100vh;
-  background-image: url("background.jpg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: #FFD400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1000;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-}
+    header h3 {
+      font-weight: 600;
+      font-size: 18px;
+      color: #000;
+      letter-spacing: 1px;
+    }
 
-/* DESKTOP */
-@media (min-width: 769px) {
-  .hero {
-    background-position: 50% 35%;
-  }
-}
+    header img {
+      height: 36px;
+      width: auto;
+    }
 
-/* CELULAR */
-@media (max-width: 768px) {
-  .hero {
-    background-position: center top;
-  }
-}
+    /* ================= HERO ================= */
+    .hero {
+      min-height: 100vh;
+      background-image: url("background.jpg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
 
-  .overlay {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 36px 26px;
-    border-radius: 24px;
-    max-width: 420px;
-    width: 100%;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-  }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
 
-  h1 {
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    margin-bottom: 8px;
-    color: #ffea00;
-  }
+      /* espaço pro header */
+      padding-top: 100px;
+    }
 
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 36px 26px;
+      border-radius: 24px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
 
-  p {
-    font-size: 16px;
-    margin-bottom: 28px;
-    opacity: 0.9;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 16px 28px;
-    background: linear-gradient(45deg, #ff0080, #ffea00);
-    color: #000;
-    text-decoration: none;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  }
-
-  @media (max-width: 480px) {
     h1 {
-      font-size: 44px;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+      color: #FFD400;
     }
 
     h2 {
-      font-size: 18px;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
-  }
-</style>
 
+    p {
+      font-size: 16px;
+      margin-bottom: 28px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 28px;
+      background: linear-gradient(45deg, #FFD400, #FFB800);
+      color: #000;
+      text-decoration: none;
+      border-radius: 40px;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Mobile ajustes */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 44px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      header {
+        height: 56px;
+      }
+
+      header img {
+        height: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h3>APTO 05</h3>
+    <img src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png" alt="Carnaval">
+  </header>
+
+  <!-- CONTEÚDO -->
   <section class="hero">
     <div class="overlay">
       <h1>2026</h1>
       <h2>CARNAVAL APTO 05</h2>
       <p>BELO HORIZONTE</p>
 
-      <!-- Botão para o mapa -->
-<a class="btn" href="mapa.html">
-  📍 Ver no mapa
-</a>
-
-
+      <a class="btn" href="mapa.html">
+        📍 Ver no mapa
+      </a>
     </div>
   </section>
+
 </body>
 </html>
+
