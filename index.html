@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>Carnaval Apto 05</title>
 
-  <!-- App style -->
+  <!-- App / PWA -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#FFD400">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -12,15 +13,20 @@
 
   <link rel="manifest" href="manifest.json">
 
-  <!-- Mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Ícones -->
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
 
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+    :root {
+      --amarelo: #FFD400;
+      --roxo: #4b1b6a;
+      --rosa: #ff2f92;
+      --verde: #00d084;
+    }
 
     * {
       margin: 0;
@@ -42,7 +48,7 @@
       left: 0;
       width: 100%;
       height: 64px;
-      background: #FFD400;
+      background: var(--amarelo);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -50,16 +56,15 @@
       z-index: 1000;
     }
 
-    header h3 {
+    header span {
       font-weight: 600;
       font-size: 18px;
-      color: #000;
       letter-spacing: 1px;
+      color: #000;
     }
 
     header img {
       height: 36px;
-      width: auto;
     }
 
     /* ================= HERO ================= */
@@ -68,75 +73,93 @@
       background-image: url("background.jpg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: center;
 
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 24px;
 
-      /* espaço pro header */
-      padding-top: 100px;
+      padding: 24px;
+      padding-top: 120px; /* espaço do header */
     }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 36px 26px;
-      border-radius: 24px;
+    /* Desktop */
+    @media (min-width: 769px) {
+      .hero {
+        background-position: 50% 35%;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero {
+        background-position: center top;
+      }
+    }
+
+    /* ================= CONTEÚDO FLUTUANTE ================= */
+    .conteudo {
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
 
-    h1 {
+    .icone {
+      width: 120px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.45));
+    }
+
+    .titulo-carnaval {
       font-size: 56px;
       font-weight: 900;
       letter-spacing: 4px;
-      margin-bottom: 8px;
-      color: #FFD400;
+      color: var(--roxo);
+      text-shadow: 0 4px 14px rgba(0,0,0,0.45);
     }
 
-    h2 {
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 6px;
+    .titulo-apto {
+      font-size: 56px;
+      font-weight: 600;
+      color: var(--rosa);
+      margin-top: -6px;
+      text-shadow: 0 4px 14px rgba(0,0,0,0.45);
     }
 
-    p {
+    .cidade {
+      margin-top: 14px;
       font-size: 16px;
-      margin-bottom: 28px;
-      opacity: 0.9;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--verde);
+      text-shadow: 0 3px 10px rgba(0,0,0,0.4);
     }
 
+    /* ================= BOTÃO ================= */
     .btn {
       display: inline-block;
-      padding: 16px 28px;
-      background: linear-gradient(45deg, #FFD400, #FFB800);
-      color: #000;
-      text-decoration: none;
+      margin-top: 36px;
+      padding: 16px 30px;
       border-radius: 40px;
+
+      background: linear-gradient(45deg, var(--amarelo), #ffb800);
+      color: #000;
+
+      text-decoration: none;
       font-size: 16px;
       font-weight: 900;
       letter-spacing: 1px;
-      transition: transform 0.2s, box-shadow 0.2s;
+
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    .btn:active {
+      transform: scale(0.94);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
     }
 
-    /* Mobile ajustes */
+    /* ================= MOBILE ================= */
     @media (max-width: 480px) {
-      h1 {
-        font-size: 44px;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
       header {
         height: 56px;
       }
@@ -144,91 +167,46 @@
       header img {
         height: 30px;
       }
+
+      .icone {
+        width: 88px;
+      }
+
+      .titulo-carnaval,
+      .titulo-apto {
+        font-size: 38px;
+        letter-spacing: 2px;
+      }
+
+      .cidade {
+        font-size: 14px;
+      }
     }
-
-    /* ================= INTRO ABAIXO DO HEADER ================= */
-.intro {
-  margin-top: 64px; /* altura do header */
-  padding: 32px 20px 24px;
-  background: #ffffff;
-  text-align: center;
-}
-
-.icone-intro {
-  width: 64px;
-  margin-bottom: 16px;
-}
-
-.titulo-carnaval {
-  font-size: 48px;
-  font-weight: 900; /* bold */
-  color: #4b1b6a;
-  line-height: 1.05;
-}
-
-.titulo-apto {
-  font-size: 48px;
-  font-weight: 600; /* semibold */
-  color: #ff2f92;
-  line-height: 1.05;
-}
-
-.cidade {
-  margin-top: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #00d084;
-  letter-spacing: 1px;
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .icone-intro {
-    width: 52px;
-  }
-
-  .titulo-carnaval,
-  .titulo-apto {
-    font-size: 36px;
-  }
-
-  .cidade {
-    font-size: 14px;
-  }
-}
   </style>
-  
 </head>
 
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- HEADER -->
   <header>
-    <h3>APTO 05</h3>
+    <span>APTO 05</span>
     <img src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png" alt="Carnaval">
   </header>
-  
-  <!-- CONTEÚDO -->
 
-  <section class="intro">
-  <img
-    class="icone-intro"
-    src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png"
-    alt="Carnaval"
-  >
-
-  <div class="intro-textos">
-    <h1 class="titulo-carnaval">CARNAVAL</h1>
-    <h1 class="titulo-apto">APTO 06</h1>
-    <p class="cidade">BELO HORIZONTE - MG</p>
-  </div>
-</section>
-  
+  <!-- HERO -->
   <section class="hero">
-    <div class="overlay">
-      <h1>2026</h1>
-      <h2>CARNAVAL APTO 05</h2>
-      <p>BELO HORIZONTE</p>
+    <div class="conteudo">
+      <img
+        class="icone"
+        src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png"
+        alt="Carnaval"
+      >
+
+      <div class="texto">
+        <div class="titulo-carnaval">CARNAVAL</div>
+        <div class="titulo-apto">APTO 05</div>
+        <div class="cidade">BELO HORIZONTE – MG</div>
+      </div>
 
       <a class="btn" href="mapa.html">
         📍 Ver no mapa
@@ -238,4 +216,3 @@
 
 </body>
 </html>
-
