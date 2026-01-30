@@ -11,75 +11,92 @@
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+ <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-    body {
-      min-height: 100vh;
-      background: #000;
-      color: #fff;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
 
-    .hero {
-      min-height: 100vh;
-      background-image: url("capa.jpg"); /* imagem da página inicial */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-    }
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff0080, #ffb000);
+    color: #fff;
+  }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.55);
-      padding: 32px 24px;
-      border-radius: 16px;
-      max-width: 420px;
-      width: 100%;
-    }
+  .hero {
+    min-height: 100vh;
+    background-image: url("capa.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
 
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 36px 26px;
+    border-radius: 24px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    color: #ffea00;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 28px;
+    opacity: 0.9;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 16px 28px;
+    background: linear-gradient(45deg, #ff0080, #ffea00);
+    color: #000;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
+  @media (max-width: 480px) {
     h1 {
-      font-size: 48px;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
+      font-size: 44px;
     }
 
     h2 {
-      font-size: 20px;
-      font-weight: normal;
-      margin-bottom: 8px;
+      font-size: 18px;
     }
+  }
+</style>
 
-    p {
-      font-size: 16px;
-      margin-bottom: 24px;
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      background: #ff2f92;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-  </style>
 </head>
 
 <body>
