@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carnaval Apto 05</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Ícone de carnaval -->
+  <link rel="icon" href="data:image/svg+xml,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <text y='.9em' font-size='90'>🎭</text>
+  </svg>">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .hero {
+      background: url('capa.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .content h1 {
+      font-size: 4rem;
+      letter-spacing: 4px;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      margin-top: 8px;
+      letter-spacing: 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      background: #ff0080;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ff4da6;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .content h1 {
+        font-size: 3rem;
+      }
+      .content h2 {
+        font-size: 1.5rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 12px 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="content">
+      <h1>2026</h1>
+      <h2>CARNAVAL APTO 05</h2>
+      <p>BELO HORIZONTE</p>
+
+      <a class="btn" href="mapa.html">IR PARA O MAPA</a>
+    </div>
+  </section>
+
+</body>
+</html>
