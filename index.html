@@ -74,15 +74,13 @@
       background-image: url("background.jpg.jpg");
       background-size: cover;
       background-repeat: no-repeat;
-
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-
       padding: 24px;
       padding-top: 120px;
-      padding-bottom: 120px; /* espaço pro rodapé */
+      padding-bottom: 120px;
     }
 
     @media (min-width: 769px) {
@@ -93,7 +91,7 @@
       .hero { background-position: center top; }
     }
 
-    /* Película amarela */
+    /* Película */
     .hero::before {
       content: "";
       position: absolute;
@@ -110,41 +108,32 @@
       width: 100%;
     }
 
-    /* ÍCONE */
-   .icone {
-  width: 150px;
-  margin-bottom: 28px;
-  opacity: 0;
-  filter: blur(6px) drop-shadow(0 16px 32px rgba(0,0,0,0.45));
-  animation: iconCinematic 2.8s cubic-bezier(.16,1,.3,1) forwards;
-}
-
-   @keyframes iconCinematic {
-  0% {
-    opacity: 0;
-    transform: scale(0.6) translateY(20px);
-    filter: blur(10px) drop-shadow(0 0 0 rgba(0,0,0,0));
-  }
-
-  40% {
-    opacity: 1;
-    transform: scale(1.05) translateY(0);
-    filter: blur(2px) drop-shadow(0 18px 36px rgba(0,0,0,0.45));
-  }
-
-  70% {
-    transform: scale(1) translateY(-6px);
-    filter: blur(0) drop-shadow(0 20px 40px rgba(0,0,0,0.45));
-  }
-
-  100% {
-    transform: scale(1) translateY(0);
-    filter: blur(0) drop-shadow(0 16px 32px rgba(0,0,0,0.45));
-  }
-}
+    /* 🎭 ÍCONE — B + A */
+    .icone {
+      width: 160px;
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: scale(0.7);
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.45));
+      animation:
+        iconEntrada 2.2s cubic-bezier(.22,1,.36,1) forwards,
+        iconFloat 6s ease-in-out infinite;
+      animation-delay: 0s, 2.4s;
     }
 
-    /* TEXTOS */
+    @keyframes iconEntrada {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ================= TÍTULOS ================= */
     .titulo-carnaval {
       font-size: 56px;
       font-weight: 900;
@@ -154,57 +143,54 @@
     }
 
     .titulo-apto {
-      font-size: 56px;
+      font-size: 40px;
       font-weight: 600;
+      margin-top: 6px;
       color: var(--rosa);
-      margin-top: -6px;
       text-shadow: 0 6px 18px rgba(0,0,0,0.55);
     }
 
     .cidade {
       margin-top: 14px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       letter-spacing: 2px;
       color: var(--verde);
       text-shadow: 0 4px 14px rgba(0,0,0,0.5);
     }
 
-    /* BOTÃO */
+    /* ================= BOTÃO ================= */
     .btn {
       display: inline-block;
-      margin-top: 40px;
-      padding: 16px 32px;
+      margin-top: 42px;
+      padding: 16px 34px;
       border-radius: 40px;
-
       background: linear-gradient(45deg, var(--amarelo), #ffb800);
       color: #000;
-
       text-decoration: none;
       font-size: 16px;
       font-weight: 900;
       letter-spacing: 1px;
-
-      box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .btn:active {
       transform: scale(0.94);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+      box-shadow: 0 7px 16px rgba(0,0,0,0.35);
     }
 
-    /* TEXTO DESCRITIVO */
+    /* ================= TEXTO ================= */
     .descricao {
-      margin-top: 28px;
+      margin-top: 26px;
       font-size: 14px;
       line-height: 1.6;
       font-weight: 500;
       color: #2b1a00;
-      text-shadow: 0 1px 4px rgba(255,255,255,0.4);
+      text-shadow: 0 1px 4px rgba(255,255,255,0.35);
     }
 
-    /* ================= FOOTER FIXO ================= */
+    /* ================= FOOTER ================= */
     footer {
       position: fixed;
       bottom: 0;
@@ -226,15 +212,18 @@
       header { height: 56px; }
       header img { height: 30px; }
 
-      .icone { width: 110px; }
+      .icone { width: 120px; }
 
-      .titulo-carnaval,
-      .titulo-apto {
+      .titulo-carnaval {
         font-size: 38px;
         letter-spacing: 2px;
       }
 
-      .cidade { font-size: 14px; }
+      .titulo-apto {
+        font-size: 28px;
+      }
+
+      .cidade { font-size: 13px; }
 
       footer { height: 44px; }
     }
@@ -267,9 +256,9 @@
       </a>
 
       <div class="descricao">
-        Este site/app foi criado para facilitar o encontro entre amigos
-        durante o Carnaval, ajudando a se localizar e acompanhar
-        os blocos que cada um pretende ir ao longo dos dias de festa.
+        Este site/app foi criado para ajudar amigos a se encontrarem
+        durante o Carnaval, facilitando a localização e o acompanhamento
+        dos blocos que pretendem curtir juntos.
       </div>
     </div>
   </section>
