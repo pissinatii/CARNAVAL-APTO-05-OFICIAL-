@@ -90,8 +90,36 @@
       color: #000;
     }
 
-    header img {
-      height: 36px;
+    .menu-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      font-weight: 900;
+      color: #000;
+      cursor: pointer;
+    }
+
+    /* ================= MENU ================= */
+    .menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .menu a {
+      color: var(--amarelo);
+      font-size: 22px;
+      font-weight: 900;
+      text-decoration: none;
     }
 
     /* ================= HERO ================= */
@@ -215,8 +243,15 @@
   <!-- HEADER -->
   <header>
     <span>APTO 05</span>
-    <img src="https://cdn-icons-png.flaticon.com/512/8032/8032717.png" alt="Carnaval">
+    <button class="menu-btn" onclick="abrirMenu()">☰</button>
   </header>
+
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <a href="mapa.html">🗺️ Mapa</a>
+    <a href="encontro.html">📍 Ponto de Encontro</a>
+    <a href="#" onclick="fecharMenu()">❌ Fechar</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -244,12 +279,23 @@
   <!-- SCRIPT -->
   <script>
     const splash = document.getElementById("splash");
+    const menu = document.getElementById("menu");
 
     window.addEventListener("load", () => {
       setTimeout(() => {
         splash.classList.add("hide");
-      }, 1000); // splash mais rápida
+      }, 1000);
     });
+
+    function abrirMenu() {
+      menu.style.opacity = "1";
+      menu.style.pointerEvents = "auto";
+    }
+
+    function fecharMenu() {
+      menu.style.opacity = "0";
+      menu.style.pointerEvents = "none";
+    }
   </script>
 
 </body>
